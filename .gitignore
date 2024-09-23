@@ -1,0 +1,55 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node.js modules directories
+node_modules/
+.pnp/
+.pnp.js
+
+# Build directories
+build/
+dist/
+out/
+
+# Cache directories
+.cache/
+.temp/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Electron - packaged builds
+release/
+app/dist/
+
+# Npm/Yarn lock files
+package-lock.json
+yarn.lock
+
+# Debug directories
+*.local
+*.asar
+
+# Environment configuration files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# VSCode workspace and other IDE files
+.vscode/
+.idea/
+
+# Temporary development files
+tmp/
+temp/
+
+# OS-specific temporary files
+*.swp
+*~
