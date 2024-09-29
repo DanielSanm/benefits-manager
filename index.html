@@ -1,20 +1,73 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <title>Hello from Electron renderer!</title>
-  </head>
-  <body>
-    <h1>Hello from Electron renderer!</h1>
-    <p>👋</p>
-  </body>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Hello from Electron renderer!</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-secondary px-4">
+      <div class="container-fluid">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="assets/LOGO_ASAAP.png" alt="Logo" width="40" class="d-inline-block align-text-center">
+            <span class="ms-2 text-body-secondary">Benefits Manager</span>
+          </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown align-self-center me-4">
+              <button class="btn btn-orange dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Cadastrar
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Cliente</a></li>
+                <li><a class="dropdown-item" href="#">Usuário</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown dropstart">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <img src="assets/user-profile.jpg" alt="Logo" width="40"
+                  class="d-inline-block align-text-center rounded-circle">
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Editar perfil</a></li>
+                <li><a class="dropdown-item" href="#">Configurações usuários</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Sair</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="search-container">
+      <form class="d-flex w-50 mx-auto my-5" role="search">
+        <input class="form-control me-2" type="text" placeholder="Cliente" aria-label="Cliente">
+        <button class="btn btn-orange" type="submit">Buscar</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="renderer.js"></script>
+</body>
+
 </html>
