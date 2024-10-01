@@ -2,7 +2,7 @@
   "name": "benefits-manager",
   "version": "1.0.0",
   "description": "A Benefits Manager for Public Employees",
-  "main": "main.js",
+  "main": "src/renderer/load.js",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"

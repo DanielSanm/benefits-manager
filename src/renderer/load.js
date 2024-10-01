@@ -5,12 +5,12 @@ const createWindow = () => {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: `${__dirname}/renderer.js`,
+      preload: `${__dirname}/preload.js`,
       nodeIntegration: true
     }
   })
 
-  win.loadFile('index.html')
+  win.loadFile('src/renderer/pages/login.html')
 }
 
 app.whenReady().then(() => {
