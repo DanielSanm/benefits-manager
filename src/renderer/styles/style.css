@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none !important;
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+}
+
+.btn-orange {
+    background-color: #F18813;
+    border: #F18813;
+    color: white;
+}
+
+.btn-orange:hover {
+    background-color: rgba(241, 136, 19, 0.8);
+    border: #F18813;
+    color: white;
+}
+
+.btn-orange:active {
+    background-color: #F18813;
+    border: #F18813;
+    color: white;
+}
+
+.btn-orange:active:focus {
+    background-color: #F18813;
+    border: #F18813;
+    color: white;
+}
+
+.btn-orange:focus-within {
+    background-color: #F18813;
+    border: #F18813;
+    color: white;
+}

@@ -5,9 +5,10 @@
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
   <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../styles/main.css">
-  <title>Hello from Electron renderer!</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <title>Benefits Manager</title>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
       <div class="container-fluid">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="assets/LOGO_ASAAP.png" alt="Logo" width="40" class="d-inline-block align-text-center">
+            <img src="../../../assets/LOGO_ASAAP.png" alt="Logo" width="40" class="d-inline-block align-text-center">
             <span class="ms-2 text-body-secondary">Benefits Manager</span>
           </a>
         </div>
@@ -27,19 +28,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown align-self-center me-4">
-              <button class="btn btn-orange dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="btn btn-orange dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 Cadastrar
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Cliente</a></li>
-                <li><a class="dropdown-item" href="#">Usuário</a></li>
+                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#clientModal">Cliente</a></li>
+                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#userModal">Usuário</a>
+                </li>
               </ul>
             </li>
 
             <li class="nav-item dropdown dropstart">
               <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                <img src="assets/user-profile.jpg" alt="Logo" width="40"
+                <img src="../../../assets/user-profile.jpg" alt="Logo" width="40"
                   class="d-inline-block align-text-center rounded-circle">
               </a>
               <ul class="dropdown-menu">
@@ -65,9 +68,103 @@
     </div>
   </main>
 
-  <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="renderer.js"></script>
+  <!-- Modal -->
+  <div class="modal fade" id="userModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Cadastrar Usuário</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row mb-3">
+              <div class="input-group mb-3">
+
+                <input type="text" class="form-control" placeholder="Nome Completo" aria-label="fullname">
+              </div>
+
+              <div class="input-group">
+
+                <input type="text" class="form-control" placeholder="E-mail" aria-label="email">
+              </div>
+
+            </div>
+            <div class="row mb-3">
+              <div class="col-6">
+                <input type="password" class="form-control" id="input-password" placeholder="Senha">
+              </div>
+              <div class="col-6">
+                <input type="password" class="form-control" id="input-confirm-password" placeholder="Confirmar Senha">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-orange">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="clientModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Cadastrar Cliente</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row mb-3">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+              <label class="btn btn-outline-primary" for="btnradio1">Gás</label>
+            
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradio2">Farmácia</label>
+            
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradio3">Cartão</label>
+              
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradio4">Convênio</label>
+            </div>
+            <div class="input-group mb-3">
+
+              <input type="text" class="form-control" placeholder="Nome Completo" aria-label="fullname">
+            </div>
+
+            <div class="input-group">
+
+              <input type="text" class="form-control" placeholder="E-mail" aria-label="email">
+            </div>
+
+          </div>
+          <div class="row mb-3">
+            <div class="col-6">
+              <input type="password" class="form-control" id="input-password" placeholder="Senha">
+            </div>
+            <div class="col-6">
+              <input type="password" class="form-control" id="input-confirm-password" placeholder="Confirmar Senha">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-orange">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="../../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="../../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../scripts/main.js"></script>
 </body>
 
 </html>
